@@ -1,0 +1,101 @@
+site_name: Docs as code advanced course # Название сайта
+site_description: Docs by parawriter # Описание сайта, добавляется в meta-теги
+theme: # Тема сайта, информация о ее параметрах
+  name: material # Название темы
+  #logo: images/logo.svg
+  favicon: images/logo.svg
+  font:
+    text: Arial # Шрифт текста
+    code: Roboto Mono # Шрифт для текста кода
+  features:
+    #- navigation.sections
+    - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
+    #- navigation.tabs # Верхнее меню
+    - navigation.tabs.sticky # Фиксация верхнего меню
+    #- Navigation sections # Настройка спойлеров в левом меню
+    #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
+    #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - navigation.instant # Функция быстрой загрузки страниц
+    - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
+    #- search.suggest # Подсказки при вводе поискового запроса
+    #- search.highlight # Подсветка результатов поиска в тексте страницы
+    - content.code.copy # Кнопка копирования в блоке кода
+   # - task-lists # чекбоксы
+
+  language: ru # Язык
+  palette: # Настройки тем
+    - scheme: tech
+#      toggle:
+#        icon: material/weather-sunny # Иконка для активации светлой темы
+#        name: Выключить солнышко # Всплывающий текст-подсказка
+    # Настройки светлой темы
+#    - scheme: default 
+#      toggle:
+#        icon: material/weather-sunny # Иконка для активации светлой темы
+#        name: Выключить солнышко # Всплывающий текст-подсказка
+#      primary: custom # Основной цвет
+#      accent: blue # Акцентный цвет
+    # Настройки тёмной темы
+#    - scheme: slate
+#      toggle:
+#        icon: material/weather-night
+#        name: Позвать солнышко
+#      primary: custom
+#      accent: blue
+
+plugins:
+# - blog
+#  - encryptcontent:
+#      password_file: 'docs/creds.yml'
+#      title_prefix: ''
+#      summary: ''
+#      placeholder: 'Пароль'
+#      decryption_failure_message: 'Неверный пароль. Попробуйте ещё раз'
+#      encryption_info_message: "Введите пароль для получения доступа:"
+#      password_button: True
+#      password_button_text: 'Войти'
+#      password: "test"
+  - glightbox
+   
+nav: # Структура сайта
+    - Главная страница: index.md
+    - 'Markdown: базовый синтаксис': markdown.md
+    - Домашние задания:
+      - Домашнее задание №0: homeworks/homework-0.md 
+
+extra:
+  social: # Ссылки на соц.сети
+    - icon: fontawesome/brands/github-alt # Иконка гитхаба
+      link: https://github.com/{your_account} # Ссылка на гитхаб
+  navbar:
+    - html: '<a href="https://example.com"><img src="images/banner.jpg" alt="Banner" style="width:50%;" /></a>'
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions: # Расширения markdown
+  - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
+  - footnotes # Поддержка встроенных сносок на страницах
+  - attr_list # Использование html-атрибутов и CSS в элементах markdown
+  - md_in_html # Поддержка markdown внутри html
+  - def_list # Поддержка списков определений
+  - pymdownx.tabbed # Использование вкладок (табов)
+  - pymdownx.details # Использование спойлеров (катов)
+  - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
+      anchor_linenums: true
+  - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.snippets # Использование заимствованного контента
+  - pymdownx.blocks.html
+  - pymdownx.emoji: # Иконки и эмодзи
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.snippets:
+      base_path:
+        - snippets
+      check_paths: false
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+copyright: |
+  &copy; 2025 NOVILLERO
