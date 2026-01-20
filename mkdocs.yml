@@ -60,8 +60,11 @@ plugins:
 nav: # Структура сайта
     - Главная страница: index.md
     - 'Markdown: базовый синтаксис': markdown.md
+    #- Тех.минимум по git: git-for-techwriter.md
+    - Вебинары: meetings.md
     - Домашние задания:
-      - Домашнее задание №0: homeworks/homework-0.md 
+      - Домашнее задание №0: homeworks/homework-0.md
+      - Домашнее задание N1: homeworks/homework-1.md
 
 extra:
   social: # Ссылки на соц.сети
