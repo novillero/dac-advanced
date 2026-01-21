@@ -82,12 +82,19 @@ markdown_extensions: # Расширения markdown
   - attr_list # Использование html-атрибутов и CSS в элементах markdown
   - md_in_html # Поддержка markdown внутри html
   - def_list # Поддержка списков определений
-  - pymdownx.tabbed # Использование вкладок (табов)
+  - pymdownx.tabbed: # Использование вкладок (табов)
+      alternate_style: true
   - pymdownx.details # Использование спойлеров (катов)
   - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
       anchor_linenums: true
   - pymdownx.superfences # Поддержка вложенных блоков кода
-  - pymdownx.snippets # Использование заимствованного контента
+  - pymdownx.snippets: # Использование заимствованного контента
+      base_path:
+        - snippets
+      check_paths: false
+  - pymdownx.caret # Использование выделения, подчеркивания и зачеркивания
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.blocks.html
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
