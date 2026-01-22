@@ -229,6 +229,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../git-for-techwriter.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Тех.минимум по git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../meetings/" class="md-nav__link">
         
   
@@ -257,6 +279,8 @@
       
         
       
+        
+      
     
     
     
@@ -265,10 +289,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -281,8 +305,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Домашние задания
           </label>
@@ -324,6 +348,29 @@
   
   <span class="md-ellipsis">
     Домашнее задание N1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homeworks/homework-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Домашнее задание N2
     
   </span>
   
@@ -560,7 +607,7 @@
 <h1 id="git">GIT для технического писателя</h1>
 <h2 id="git_1">Что такое GIT</h2>
 <p>GIT — это распределённая система контроля версий, программное обеспечение для работы с регулярно обновляющимися данными, которое позволяет хранить несколько версий одного и того же файла, отслеживать его изменения и управлять этими изменениями.</p>
-<p>Архитектура GIT предусматривает один главный репозиторий (хранилище проекта), расположенный на отдельном сервере (поэтому его ещё называют удалённым репозиторием), локальные копии этого репозитория на устройствах участников проекта. Каждый пользователь работает в своём локальном репозитории, при необходимости обновляя его из удалённого репозитория или наоборот, отправляя свои локальные изменения в удалённый репозиторий. </p>
+<p>Архитектура GIT предусматривает один главный репозиторий (хранилище проекта), расположенный на отдельном сервере (поэтому его ещё называют удалённым репозиторием), и локальные копии этого репозитория на устройствах участников проекта. Каждый пользователь работает в своём локальном репозитории, при необходимости обновляя его из удалённого репозитория или наоборот, отправляя свои локальные изменения в удалённый репозиторий. </p>
 <p>Такая архитектура обеспечивает высокую производительность системы (многие операции выполняются локально и не требуют сетевого подключения к удалённому серверу) и надёжность данных.</p>
 <h3 id="-">Веб-сервисы для хранения репозиториев</h3>
 <p>Для хранения удалённых git-репозиториев и управления ими используются специальные веб-сервисы: GitLab, BitBucket, GitVerse, GitHub.</p>
@@ -620,12 +667,12 @@
 </ol>
 <h4 id="git-git-config">Настройка параметров конфигурации git <code>git config</code></h4>
 <p>Установите имя пользователя и электронный адрес:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git config --global user.email &quot;my-address@mail.com&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git config --global user.email my-address@mail.com
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git config --global user.name &quot;Anton.Gafarov&quot;
 </code></pre></div>
 <p>Этими данными по умолчанию будут подписываться все сделанные вами коммиты.</p>
 <p>Вы можете задать отдельные имя пользователя и электронную почту для определённого репозитория. Для этого перейдите в локальный репозиторий и выполните команды <code>git config</code> без флага <code>--global</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git config user.email &quot;new-address@mail.com&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git config user.email new-address@mail.com
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git config user.name &quot;Superman&quot;
 </code></pre></div>
 <h4 id="git-status">Просмотр текущего состояния репозитория <code>git status</code></h4>
@@ -741,7 +788,7 @@
 <p>Для просмотра истории коммитов выполните команду <code>git log</code>. В ответе отобразится список коммитов:</p>
 <div class="highlight"><span class="filename">Пример</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git log
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>commit dfa4ed84ce580cb60967d976e11cdfd1453a1183 (HEAD -&gt; git-homework, origin/git-homework)
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Author: parawriter &lt;novillero@yandex-team.ru&gt;
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Author: parawriter &lt;novillero@yandex.ru&gt;
 <a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Date:   Sat Jan 17 11:00:11 2026 +0300
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    создание страницы с git-командами
@@ -801,7 +848,17 @@
 <p>Для отмены проиндексированных изменений в файле используйте команду <code>git restore --staged название-файла</code>. Изменения в файле сохранятся, но будут удалены из индекса.</p>
 </li>
 <li>
-<p>Для отмены коммита используйте команду <code>git revert хэш-коммита</code>.</p>
+<p>Для отмены локального коммита (который ещё не отправили в удалённый репозиторий) используйте команду <code>git reset</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git reset HEAD~1
+</code></pre></div>
+<p>В результате выполнения этой команды указатель HEAD переместится на предыдущий коммит, а изменения из текущего коммита окажутся в рабочей директории.</p>
+<div class="admonition info">
+<p class="admonition-title">Важно!</p>
+<p>Не используйте команду <code>git reset</code> для коммитов, которые вы уже отправили на удалённый сервер.</p>
+</div>
+</li>
+<li>
+<p>Для отмены коммита, отправленного в удалённый репозиторий, используйте команду <code>git revert хэш-коммита</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
 <p>Команда <code>git revert</code> не удаляет коммит, а отменяет внесённые в нём изменения и фиксирует это новым коммитом.</p>
@@ -811,16 +868,18 @@
 <h4 id="_11">Просмотр веток</h4>
 <p>Для просмотра всех веток локального репозитория используйте команду <code>git branch</code>.</p>
 <p>Для просмотра всех веток удалённого репозитория используйте команду <code>git branch</code> с флагом <code>-r</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git branch -r
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git branch -r
 </code></pre></div>
 <h4 id="_12">Удаление веток</h4>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Локальная ветка</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Локальная ветка</label><label for="__tabbed_1_2">Удалённая ветка</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Для удаления локальной ветки:</p>
 <ol>
 <li>Переключитесь на другую ветку.</li>
 <li>
 <p>Выполните команду:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git branch --delete название-ветки
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git branch --delete название-ветки
 </code></pre></div>
 </li>
 </ol>
@@ -829,10 +888,11 @@
 <p>Команда <code>git branch --delete</code> удаляет только локальную версию ветки и не влияет на опубликованную в удалённом репозитории ветку, которую нужно удалить отдельно.</p>
 </div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Удалённая ветка</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Для удаления удалённой ветки выполните команду:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git push origin --delete название-ветки
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>git push origin --delete название-ветки
 </code></pre></div>
+</div>
 </div>
 </div>
 
