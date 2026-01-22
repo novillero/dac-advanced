@@ -99,7 +99,7 @@ GitHub — один из самых популярных таких сервис
 Установите имя пользователя и электронный адрес:
 
 ```
-git config --global user.email "my-address@mail.com"
+git config --global user.email my-address@mail.com
 git config --global user.name "Anton.Gafarov"
 ```
 
@@ -108,7 +108,7 @@ git config --global user.name "Anton.Gafarov"
 Вы можете задать отдельные имя пользователя и электронную почту для определённого репозитория. Для этого перейдите в локальный репозиторий и выполните команды `git config` без флага `--global`:
 
 ```
-git config user.email "new-address@mail.com"
+git config user.email new-address@mail.com
 git config user.name "Superman"
 ```
 
@@ -260,7 +260,7 @@ git push --set-upstream origin new-feature
     ```title="Пример"
     git log
     commit dfa4ed84ce580cb60967d976e11cdfd1453a1183 (HEAD -> git-homework, origin/git-homework)
-    Author: parawriter <novillero@yandex-team.ru>
+    Author: parawriter <novillero@yandex.ru>
     Date:   Sat Jan 17 11:00:11 2026 +0300
 
         создание страницы с git-командами
