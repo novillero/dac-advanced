@@ -21,3 +21,5 @@
 * Посмотреть [запись встречи](https://disk.yandex.ru/i/KCsnAwSalfg-xA){target=_blank}.
 
 #### Вебинар №2 «GIT»
+
+билиберда и чепуха
