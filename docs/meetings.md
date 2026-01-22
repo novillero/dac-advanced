@@ -19,3 +19,5 @@
 
 * Скачать [презентацию](./original-docs/meeting-1.pdf){target=_blank};
 * Посмотреть [запись встречи](https://disk.yandex.ru/i/KCsnAwSalfg-xA){target=_blank}.
+
+#### Вебинар №2
