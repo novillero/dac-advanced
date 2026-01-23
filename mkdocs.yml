@@ -2,7 +2,7 @@ site_name: Docs as code advanced course # Название сайта
 site_description: Docs by parawriter # Описание сайта, добавляется в meta-теги
 theme: # Тема сайта, информация о ее параметрах
   name: material # Название темы
-  #logo: images/logo.svg
+  logo: images/logo.svg
   favicon: images/logo.svg
   font:
     text: Arial # Шрифт текста
@@ -17,8 +17,8 @@ theme: # Тема сайта, информация о ее параметрах
     #- toc.integrate # Фиксирует оглавление страницы в левом меню
     - navigation.instant # Функция быстрой загрузки страниц
     - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
-    #- search.suggest # Подсказки при вводе поискового запроса
-    #- search.highlight # Подсветка результатов поиска в тексте страницы
+    - search.suggest # Подсказки при вводе поискового запроса
+    - search.highlight # Подсветка результатов поиска в тексте страницы
     - content.code.copy # Кнопка копирования в блоке кода
    # - task-lists # чекбоксы
 
@@ -44,17 +44,7 @@ theme: # Тема сайта, информация о ее параметрах
 #      accent: blue
 
 plugins:
-# - blog
-#  - encryptcontent:
-#      password_file: 'docs/creds.yml'
-#      title_prefix: ''
-#      summary: ''
-#      placeholder: 'Пароль'
-#      decryption_failure_message: 'Неверный пароль. Попробуйте ещё раз'
-#      encryption_info_message: "Введите пароль для получения доступа:"
-#      password_button: True
-#      password_button_text: 'Войти'
-#      password: "test"
+  - search
   - glightbox
    
 nav: # Структура сайта
@@ -70,7 +60,7 @@ nav: # Структура сайта
 extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
-      link: https://github.com/{your_account} # Ссылка на гитхаб
+      link: https://github.com/novillero/dac-advanced # Ссылка на гитхаб
   navbar:
     - html: '<a href="https://example.com"><img src="images/banner.jpg" alt="Banner" style="width:50%;" /></a>'
 
@@ -109,4 +99,4 @@ markdown_extensions: # Расширения markdown
       clickable_checkbox: true
 
 copyright: |
-  &copy; 2025 NOVILLERO
+  &copy; 2026 Novillero
