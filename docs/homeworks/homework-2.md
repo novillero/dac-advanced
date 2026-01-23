@@ -40,8 +40,9 @@
     4. Установите параметры пользователя в текущем репозитории:
 
         ```
-        git config user.email "my-address@mail.com"
+        git config user.email my-address@mail.com
         git config user.name "my-name"
+        ```
 
     5. Убедитесь, что вы находитесь в ветке `master`. Для этого выполните команду `git status`.
 
