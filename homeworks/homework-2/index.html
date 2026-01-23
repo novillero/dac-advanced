@@ -608,9 +608,9 @@
 </li>
 <li>
 <p>Установите параметры пользователя в текущем репозитории:</p>
-<p>```
-git config user.email "my-address@mail.com"
-git config user.name "my-name"</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git config user.email my-address@mail.com
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git config user.name &quot;my-name&quot;
+</code></pre></div>
 </li>
 <li>
 <p>Убедитесь, что вы находитесь в ветке <code>master</code>. Для этого выполните команду <code>git status</code>.</p>
@@ -630,12 +630,12 @@ git config user.name "my-name"</p>
 </li>
 <li>
 <p>Создайте коммит:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git commit -m &quot;Описание внесенных изменений&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git commit -m &quot;Описание внесенных изменений&quot;
 </code></pre></div>
 </li>
 <li>
 <p>Опубликуйте ветку и отправьте коммит в удалённый репозиторий. Для этого выполните команду <code>git push</code> с флагом <code>--set-upstream</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git push --set-upstream origin название-вашей-ветки
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git push --set-upstream origin название-вашей-ветки
 </code></pre></div>
 </li>
 <li>
@@ -669,7 +669,7 @@ git config user.name "my-name"</p>
 </li>
 <li>
 <p>Откройте вашу инструкцию, отступите пустую строку от заголовка и добавьте текст:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Эта инструкция создана в рамках мастер-класса по docs as code.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Эта инструкция создана в рамках мастер-класса по docs as code.
 </code></pre></div>
 </li>
 <li>
@@ -683,7 +683,7 @@ git config user.name "my-name"</p>
 </li>
 <li>
 <p>Откройте вашу инструкцию, отступите пустую строку от заголовка и добавьте текст:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Это пошаговая инструкция о функциональности Telegram
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Это пошаговая инструкция о функциональности Telegram
 </code></pre></div>
 </li>
 <li>
@@ -698,13 +698,13 @@ git config user.name "my-name"</p>
 </li>
 <li>
 <p>Для слияния выполните команду <code>git merge название-сливаемой-ветки</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git merge your-github-login-test
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git merge your-github-login-test
 </code></pre></div>
 </li>
 </ol>
 <p>Система не сможет выполнить слияние из-за наличия конфликта в файле вашей инструкции:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CONFLICT (add/add): Merge conflict in docs/instructions/your-github-login-instruction.md
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Automatic merge failed; fix conflicts and then commit the result.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CONFLICT (add/add): Merge conflict in docs/instructions/your-github-login-instruction.md
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Automatic merge failed; fix conflicts and then commit the result.
 </code></pre></div>
 <p>Мы создали этот конфликт искусственно, намеренно добавив разные изменения в один и тот же файл в двух сливаемых ветках. В реальности конфликты могут возникать во время параллельной работы разных пользователей над одними и теми же файлами.</p>
 <p>Решите конфликт одним из двух способов, самостоятельно выбрав вариант файла, который останется после слияния.</p>
@@ -733,12 +733,12 @@ git config user.name "my-name"</p>
 <ul>
 <li>
 <p>Флаг <code>theirs</code> сообщает о том, что после слияния должна остаться версия файла из сливаемой ветки:</p>
-<div class="highlight"><span class="filename">останется версия файла из ветки your-github-login-test</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git checkout --theirs docs/instructions/your-github-login-instruction.md
+<div class="highlight"><span class="filename">останется версия файла из ветки your-github-login-test</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git checkout --theirs docs/instructions/your-github-login-instruction.md
 </code></pre></div>
 </li>
 <li>
 <p>Флаг <code>ours</code> сообщает о том, что после слияния должна остаться версия файла из целевой ветки:</p>
-<div class="highlight"><span class="filename">останется версия файла из ветки your-github-login-instruction</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git checkout --ours docs/instructions/your-github-login-instruction.md
+<div class="highlight"><span class="filename">останется версия файла из ветки your-github-login-instruction</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git checkout --ours docs/instructions/your-github-login-instruction.md
 </code></pre></div>
 </li>
 </ul>
