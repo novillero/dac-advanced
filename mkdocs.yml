@@ -51,6 +51,7 @@ nav: # Структура сайта
     - Главная страница: index.md
     - 'Markdown: базовый синтаксис': markdown.md
     - Тех.минимум по git: git-for-tech-writer.md
+    #- Стайлгайд для пошаговых инструкций: styleguide.md
     - Вебинары: meetings.md
     - Домашние задания:
       - Домашнее задание №0: homeworks/homework-0.md
