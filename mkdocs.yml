@@ -51,7 +51,6 @@ nav: # Структура сайта
     - Главная страница: index.md
     - 'Markdown: базовый синтаксис': markdown.md
     - Тех.минимум по git: git-for-tech-writer.md
-    - Стайлгайд для пошаговых инструкций: styleguide.md
     - Домашний проект:
       - pet-project/index.md
       - Настройка MkDocs: pet-project/mkdocs-setup.md
@@ -60,8 +59,10 @@ nav: # Структура сайта
       - Домашнее задание №0: homeworks/homework-0.md
       - Домашнее задание N1: homeworks/homework-1.md
       - Домашнее задание N2: homeworks/homework-2.md
-      - Практика кросс-ревью: homeworks/review.md
       - Домашнее задание N3: homeworks/homework-3.md
+    - Кросс-ревью:
+      - Как проводить ревью: review/how-to.md
+      - Стайлгайд для пошаговых инструкций: review/styleguide.md
 
 extra:
   social: # Ссылки на соц.сети
