@@ -11,8 +11,8 @@ theme: # Тема сайта, информация о ее параметрах
     #- navigation.sections
     - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
     #- navigation.tabs # Верхнее меню
-    - navigation.tabs.sticky # Фиксация верхнего меню
-    #- Navigation sections # Настройка спойлеров в левом меню
+    #- navigation.tabs.sticky # Фиксация верхнего меню
+    #- navigation sections # Настройка спойлеров в левом меню
     #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
     #- toc.integrate # Фиксирует оглавление страницы в левом меню
     - navigation.instant # Функция быстрой загрузки страниц
@@ -20,7 +20,7 @@ theme: # Тема сайта, информация о ее параметрах
     - search.suggest # Подсказки при вводе поискового запроса
     - search.highlight # Подсветка результатов поиска в тексте страницы
     - content.code.copy # Кнопка копирования в блоке кода
-   # - task-lists # чекбоксы
+   #- task-lists # чекбоксы
 
   language: ru # Язык
   palette: # Настройки тем
@@ -51,12 +51,16 @@ nav: # Структура сайта
     - Главная страница: index.md
     - 'Markdown: базовый синтаксис': markdown.md
     - Тех.минимум по git: git-for-tech-writer.md
-    #- Стайлгайд для пошаговых инструкций: styleguide.md
+    - Стайлгайд для пошаговых инструкций: styleguide.md
+    - Домашний проект:
+      - pet-project/index.md
+      - Настройка MkDocs: pet-project/mkdocs-setup.md
     - Вебинары: meetings.md
     - Домашние задания:
       - Домашнее задание №0: homeworks/homework-0.md
       - Домашнее задание N1: homeworks/homework-1.md
       - Домашнее задание N2: homeworks/homework-2.md
+      - Домашнее задание N3: homeworks/homework-3.md
 
 extra:
   social: # Ссылки на соц.сети
