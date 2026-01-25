@@ -60,6 +60,7 @@ nav: # Структура сайта
       - Домашнее задание №0: homeworks/homework-0.md
       - Домашнее задание N1: homeworks/homework-1.md
       - Домашнее задание N2: homeworks/homework-2.md
+      - Практика кросс-ревью: homeworks/review.md
       - Домашнее задание N3: homeworks/homework-3.md
 
 extra:
