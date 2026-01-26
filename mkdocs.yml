@@ -97,10 +97,6 @@ markdown_extensions: # Расширения markdown
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.snippets:
-      base_path:
-        - snippets
-      check_paths: false
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true

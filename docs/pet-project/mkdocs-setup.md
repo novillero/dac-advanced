@@ -229,7 +229,8 @@ site_name: My Docs
       - attr_list # Использование html-атрибутов и CSS в элементах markdown
       - md_in_html # Поддержка markdown внутри html
       - def_list # Поддержка списков определений
-      - pymdownx.tabbed # Использование вкладок (табов)
+      - pymdownx.tabbed: # Использование вкладок (табов)
+          alternate_style: true
       - pymdownx.details # Использование спойлеров (катов)
       - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
           anchor_linenums: true
