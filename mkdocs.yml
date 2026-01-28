@@ -78,7 +78,7 @@ nav: # Структура сайта
       - Настройка MkDocs: pet-project/mkdocs-setup.md
       - Подключение плагинов MkDocs: pet-project/mkdocs-plugins.md
       - Публикация MkDocs: pet-project/mkdocs-publication.md
-      - 'Примеры документации : приложение Нотсапп':
+      - 'Примеры доки: приложение Нотсапп':
         - Спецификация приложения: pet-project/notesapp/specification.md
         - Сценарий «Создание новой заметки»: pet-project/notesapp/scenario-1.md
 
