@@ -46,14 +46,27 @@ theme: # Тема сайта, информация о ее параметрах
 plugins:
   - search
   - glightbox
+  - tags:
+      tags_allowed:
+      - task 
+      - help 
+      - manual
+      - git
+      - pet-project 
+      - markdown
+  - redirects:
+      redirect_maps:
+        'instructions/mkdocs-setup.md': 'pet-project/mkdocs-setup.md'
    
 nav: # Структура сайта
     - Главная страница: index.md
     - 'Markdown: базовый синтаксис': markdown.md
+    - 'Markdown: расширенный синтаксис': markdown-extensions.md
     - Тех.минимум по git: git-for-tech-writer.md
     - Домашний проект:
       - pet-project/index.md
       - Настройка MkDocs: pet-project/mkdocs-setup.md
+      - Подключение плагинов MkDocs: pet-project/mkdocs-plugins.md
     - Вебинары: meetings.md
     - Домашние задания:
       - Домашнее задание №0: homeworks/homework-0.md
