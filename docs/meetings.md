@@ -53,3 +53,19 @@
 
 * Прочитать [статью](./pet-project/mkdocs-setup.md).
 * Посмотреть [запись встречи](https://disk.yandex.ru/i/1VZeSDh_JGAruQ){target=_blank}.
+
+#### Вебинар №4 «Публикация и развитие док.проекта»
+
+1. Работа с плагинами.
+2. Публикация проекта на GitHub Pages.
+3. Настойка автоматической публикации с помощью GitHub Actions.
+
+---
+
+* Прочитать статьи:
+
+    * [Работа с плагинами](./pet-project/mkdocs-plugins.md).
+    * [Публикация проекта](./pet-project/mkdocs-publication.md)
+    * [Расширенный синтаксис Markdown](./markdown-extensions.md)
+
+* Посмотреть [запись встречи](https://disk.yandex.ru/i/cwHL56Lk9jRH1w){target=_blank}.
