@@ -67,11 +67,11 @@ GitHub Pages — это бесплатный хостинг от GitHub, пре�
       deploy:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-python@v4
+          - uses: actions/checkout@v4
+          - uses: actions/setup-python@v5
             with:
               python-version: 3.x
-          - uses: actions/cache@v2
+          - uses: actions/cache@v4
             with:
               key: ${{ github.ref }}
               path: .cache
