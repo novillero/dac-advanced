@@ -54,9 +54,6 @@ plugins:
       - git
       - pet-project 
       - markdown
-  - redirects:
-      redirect_maps:
-        'instructions/mkdocs-setup.md': 'pet-project/mkdocs-setup.md'
    
 nav: # Структура сайта
     - Материалы курса: 
