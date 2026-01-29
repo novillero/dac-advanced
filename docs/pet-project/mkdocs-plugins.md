@@ -7,6 +7,8 @@ tags:
 
 # Установка плагинов для MkDocs
 
+Плагины MkDocs — это дополнительные модули, которые реализуют новые функциональности стандартного MkDocs.
+
 ## Встроенные плагины
 
 Встроенные плагины не нужно устанавливать, они работают из коробки. Достаточно подключить их в конфиге проекта.
@@ -22,6 +24,7 @@ plugins:
   - search
 ```
 
+Документация плагина: [https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/){target=_blank}
 
 ### Tags
 
@@ -34,6 +37,8 @@ plugins:
   - search
   - tags
 ```
+
+Документация плагина: [https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/){target=_blank}
 
 #### Настройка тегов
 
@@ -155,3 +160,5 @@ plugins:
       - search
       - glightbox
     ```
+
+Ссылка на плагин: [https://github.com/blueswen/mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox){target=_blank}
