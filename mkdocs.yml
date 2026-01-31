@@ -54,9 +54,11 @@ plugins:
       - git
       - pet-project 
       - markdown
+  - swagger-ui-tag
+  - redoc-tag
    
 nav: # Структура сайта
-    - Материалы курса: 
+    - Материалы курса:
       - index.md
       - 'Markdown: базовый синтаксис': markdown.md
       - 'Markdown: расширенный синтаксис': markdown-extensions.md
@@ -79,6 +81,8 @@ nav: # Структура сайта
       - 'Примеры доки: приложение Нотсапп':
         - Спецификация приложения: pet-project/notesapp/specification.md
         - Сценарий «Создание новой заметки»: pet-project/notesapp/scenario-1.md
+        - API Specification: pet-project/notesapp/api.md
+        - API Specification: pet-project/notesapp/api-2.md
 
 extra:
   social: # Ссылки на соц.сети
