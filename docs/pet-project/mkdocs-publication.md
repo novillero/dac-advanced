@@ -109,6 +109,6 @@ GitHub Pages — это бесплатный хостинг от GitHub, пре�
               key: ${{ github.ref }}
               path: .cache
           - run: pip install mkdocs-material
-          - run: pip install pip install mkdocs-glightbox # шаг для установки плагина mkdocs-glightbox
+          - run: pip install mkdocs-glightbox # шаг для установки плагина mkdocs-glightbox
           - run: mkdocs gh-deploy --force
     ```
