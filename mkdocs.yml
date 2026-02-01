@@ -91,10 +91,10 @@ extra_css:
   - stylesheets/extra.css
 
 markdown_extensions: # Расширения markdown
+  - md_in_html # Поддержка markdown внутри html
   - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
   - footnotes # Поддержка встроенных сносок на страницах
   - attr_list # Использование html-атрибутов и CSS в элементах markdown
-  - md_in_html # Поддержка markdown внутри html
   - def_list # Поддержка списков определений
   - pymdownx.tabbed: # Использование вкладок (табов)
       alternate_style: true
