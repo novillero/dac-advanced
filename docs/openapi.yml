@@ -18,6 +18,7 @@ paths:
         
         Возвращает список всех заметок для отображения в основном интерфейсе.
         Список отображается по умолчанию при входе в приложение.
+        Возвращает пустой массив, если заметок нет.
       operationId: allnotesGET
       tags:
         - notes
@@ -43,13 +44,24 @@ paths:
                   title: "Фильмы к просмотру"
                   preview: "Интерстеллар, Начало..."
                   updatedAt: "2024-01-15T18:45:00Z"
+        '204':
+          description: Нет заметок
+          content:
+            application/json:
+              schema:
+                type: array
+                maxItems: 0
+                items: {}
+              example: []
+        '500':
+          $ref: '#/components/responses/ServerError'
 
     post:
       summary: Создать новую заметку
       description: Создание новой заметки
       operationId: createNote
       tags:
-        - Заметки
+        - notes
       requestBody:
         required: true
         content:
@@ -71,6 +83,10 @@ paths:
               description: URL созданной заметки
               schema:
                 type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/ServerError'
 
   /notes/{id}:
     parameters:
@@ -92,7 +108,7 @@ paths:
         Вызывается, когда пользователь нажимает на заметку в списке.
       operationId: getNoteById
       tags:
-        - Заметки
+        - notes
       responses:
         '200':
           description: Успешно получена заметка
@@ -121,13 +137,19 @@ paths:
                   - Огурцы - 3 шт
                 createdAt: "2024-01-15T10:30:00Z"
                 updatedAt: "2024-01-17T14:30:00Z"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
 
     put:
       summary: Обновить заметку
       description: Полное обновление содержимого заметки
       operationId: updateNote
       tags:
-        - Заметки
+        - notes
       requestBody:
         required: true
         content:
@@ -144,16 +166,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Note'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
 
     delete:
       summary: Удалить заметку
       description: Удаление заметки по ID
       operationId: deleteNote
       tags:
-        - Заметки
+        - notes
       responses:
         '204':
           description: Заметка успешно удалена
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
 
 components:
   schemas:
@@ -265,6 +299,10 @@ components:
               error:
                 type: string
                 example: "Note not found"
+              timestamp:
+                type: string
+                format: date-time
+                example: "2024-01-20T10:30:00Z"
     
     BadRequest:
       description: Некорректные данные
@@ -276,6 +314,21 @@ components:
               error:
                 type: string
                 example: "Invalid data provided"
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    field:
+                      type: string
+                      example: "title"
+                    message:
+                      type: string
+                      example: "Title cannot be empty"
+              timestamp:
+                type: string
+                format: date-time
+                example: "2024-01-20T10:30:00Z"
     
     ServerError:
       description: Ошибка сервера
@@ -287,3 +340,14 @@ components:
               error:
                 type: string
                 example: "Internal server error"
+              code:
+                type: string
+                example: "INTERNAL_SERVER_ERROR"
+              timestamp:
+                type: string
+                format: date-time
+                example: "2024-01-20T10:30:00Z"
+              requestId:
+                type: string
+                description: Идентификатор запроса для отладки
+                example: "req_123456789"
