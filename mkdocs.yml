@@ -54,9 +54,15 @@ plugins:
       - git
       - pet-project 
       - markdown
+  - swagger-ui-tag
+  - redoc-tag
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      theme:
+        enabled: false
    
 nav: # Структура сайта
-    - Материалы курса: 
+    - Материалы курса:
       - index.md
       - 'Markdown: базовый синтаксис': markdown.md
       - 'Markdown: расширенный синтаксис': markdown-extensions.md
@@ -76,9 +82,13 @@ nav: # Структура сайта
       - Настройка MkDocs: pet-project/mkdocs-setup.md
       - Подключение плагинов MkDocs: pet-project/mkdocs-plugins.md
       - Публикация MkDocs: pet-project/mkdocs-publication.md
+      - Подключение OpenAPI: pet-project/api-add.md
+      - Добавление диаграмм PlantUML: pet-project/plant-uml.md
       - 'Примеры доки: приложение Нотсапп':
         - Спецификация приложения: pet-project/notesapp/specification.md
         - Сценарий «Создание новой заметки»: pet-project/notesapp/scenario-1.md
+        - API Specification Swagger: pet-project/notesapp/swagger.md
+        - API Specification Redoc: pet-project/notesapp/redoc.md
 
 extra:
   social: # Ссылки на соц.сети
@@ -101,7 +111,11 @@ markdown_extensions: # Расширения markdown
   - pymdownx.details # Использование спойлеров (катов)
   - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
       anchor_linenums: true
-  - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.superfences: # Поддержка вложенных блоков кода
+      custom_fences:
+        - name: raw
+          class: raw
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.snippets: # Использование заимствованного контента
       base_path:
         - snippets
