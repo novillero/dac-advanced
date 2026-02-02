@@ -173,6 +173,7 @@ end alt
 ## Полезные ссылки
 
 * [PlantUML](https://plantuml.com/ru/){target=_blank};
+* [Песочница для plantUML-диаграмм](https://www.plantuml.com/plantuml/uml/){target=_blank};
 * Плагин [mkdocs_puml](https://pypi.org/project/mkdocs_puml/){target=_blank};
 * [Курс по PlantUML на Stepik](https://stepik.org/course/212663/promo){target=_blank}.
 
