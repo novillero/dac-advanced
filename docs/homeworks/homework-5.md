@@ -8,7 +8,7 @@ tags:
 
 ### Спецификация API
 
-1. Скачайте файл спецификации [openapi.yml](../openapi.yml){target=_blank} к себе на устройство.
+1. Скачайте файл спецификации [openapi.yml](https://github.com/novillero/dac-advanced/blob/master/docs/openapi.yml){target=_blank} к себе на устройство.
 2. Добавьте файл спецификации в свой домашний проект.
 3. Установите плагин `swagger-ui-tag` по [инструкции](../pet-project/api-add.md)
 4. Создайте статью для публикации спецификации и добавьте в нее тег со ссылкой на файл спецификации по [инструкции](../pet-project/api-add.md).
