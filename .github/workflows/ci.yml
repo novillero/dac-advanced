@@ -19,4 +19,7 @@ jobs:
           path: .cache
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox
+      - run: pip install mkdocs-swagger-ui-tag
+      - run: pip install mkdocs-redoc-tag
+      - run: pip install mkdocs_puml
       - run: mkdocs gh-deploy --force
