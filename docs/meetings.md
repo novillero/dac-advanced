@@ -69,3 +69,29 @@
     * [Расширенный синтаксис Markdown](./markdown-extensions.md)
 
 * Посмотреть [запись встречи](https://disk.yandex.ru/i/cwHL56Lk9jRH1w){target=_blank}.
+
+#### Вебинар №5 «Подключение разных типов документации к проекту»
+
+1. API-документация:
+
+    * очень коротко об API.
+    * подключение спецификации OpenAPI с помощью плагинов.
+
+2. PlantUML диаграммы:
+
+    * Разработка диаграммы последовательности.
+    * Генерация диаграмм с помощью плагина.
+
+---
+
+* Прочитать статьи:
+
+    * [Работа с плагинами](./pet-project/api-add.md).
+    * [Публикация проекта](./pet-project/plant-uml.md)
+
+* Посмотреть примеры:
+
+    * [API Specification Swagger](./pet-project/notesapp/swagger.md)
+    * [API Specification Redoc](./pet-project/notesapp/redoc.md)
+
+* Посмотреть [запись встречи](https://disk.yandex.ru/i/BUqnQqsdWqJalQ){target=_blank}.
