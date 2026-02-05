@@ -85,6 +85,8 @@ nav: # Структура сайта
       - Публикация MkDocs: pet-project/mkdocs-publication.md
       - Подключение OpenAPI: pet-project/api-add.md
       - Добавление диаграмм PlantUML: pet-project/plant-uml.md
+      - Кастомизация стилей MkDocs: pet-project/mkdocs-css.md
+      - Единый источник в MkDocs: pet-project/snippets.md
       - 'Примеры доки: приложение Нотсапп':
         - Спецификация приложения: pet-project/notesapp/specification.md
         - Сценарий «Создание новой заметки»: pet-project/notesapp/scenario-1.md
@@ -119,7 +121,7 @@ markdown_extensions: # Расширения markdown
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.snippets: # Использование заимствованного контента
       base_path:
-        - snippets
+        - docs
       check_paths: false
   - pymdownx.caret # Использование выделения, подчеркивания и зачеркивания
   - pymdownx.mark
