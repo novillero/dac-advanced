@@ -117,8 +117,8 @@ theme:
 /*Параметры текста статей*/
 .md-typeset {
     font-family: 'Tahoma', 'arial';
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 200;
+    font-size: 16px;
     color: #4b5563;
 }
 /*Параметры текста nav и toc*/
@@ -145,8 +145,8 @@ theme:
 ```css title="extra.css"
 .md-typeset {
     font-family: 'Tahoma', 'arial';
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 200;
+    font-size: 16px;
     color: #4b5563;
 }
 
