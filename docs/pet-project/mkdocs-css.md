@@ -116,14 +116,14 @@ theme:
 ```css title="extra.css"
 /*Параметры текста статей*/
 .md-typeset {
-    font-family: 'Tahoma, arial';
+    font-family: 'Tahoma', 'arial';
     font-weight: 600;
     font-size: 25px;
     color: #4b5563;
 }
 /*Параметры текста nav и toc*/
 .md-nav {
-    font-family: 'Tahoma, arial';
+    font-family: 'Tahoma', 'arial';
     font-weight: 400;
     font-size: 16px;
     color: #4b5563;
@@ -144,7 +144,7 @@ theme:
 
 ```css title="extra.css"
 .md-typeset {
-    font-family: 'Tahoma, arial';
+    font-family: 'Tahoma', 'arial';
     font-weight: 600;
     font-size: 25px;
     color: #4b5563;
