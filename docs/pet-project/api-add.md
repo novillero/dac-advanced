@@ -115,7 +115,7 @@ OpenAPI — стандартный формат описания REST API.
             ```yaml title="mkdocs.yml"
             plugins:
               - search
-              - sredoc-tag
+              - redoc-tag
             ```
 
         3. Создайте md-файл для размещения документации.
