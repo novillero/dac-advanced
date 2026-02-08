@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Docs by parawriter" name="description"/>
+<link href="../api-add/" rel="prev"/>
+<link href="../mkdocs-css/" rel="next"/>
+<link href="../../images/logo.svg" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Добавление диаграмм PlantUML - Docs as code advanced course</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="tech" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#plantuml">
+          Перейти к содержанию
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="Docs as code advanced course" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Docs as code advanced course">
+<img alt="logo" src="../../images/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Docs as code advanced course
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Добавление диаграмм PlantUML
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="tech" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+          
+  
+  
+    
+  
+  Материалы курса
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+    
+  
+  Домашний проект
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Docs as code advanced course" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Docs as code advanced course">
+<img alt="logo" src="../../images/logo.svg"/>
+</a>
+    Docs as code advanced course
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Материалы курса
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Материалы курса
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../markdown/">
+<span class="md-ellipsis">
+    
+  
+    Markdown: базовый синтаксис
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../markdown-extensions/">
+<span class="md-ellipsis">
+    
+  
+    Markdown: расширенный синтаксис
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../git-for-tech-writer/">
+<span class="md-ellipsis">
+    
+  
+    Тех.минимум по git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../meetings/">
+<span class="md-ellipsis">
+    
+  
+    Вебинары
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Домашние задания
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Домашние задания
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-0/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание №0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-1/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-2/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-3/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-4/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-5/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание №5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-6/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание №6
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Кросс-ревью
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Кросс-ревью
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../review/how-to/">
+<span class="md-ellipsis">
+    
+  
+    Как проводить ревью
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../review/styleguide/">
+<span class="md-ellipsis">
+    
+  
+    Стайлгайд для пошаговых инструкций
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Домашний проект
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Домашний проект
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-setup/">
+<span class="md-ellipsis">
+    
+  
+    Настройка MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-plugins/">
+<span class="md-ellipsis">
+    
+  
+    Подключение плагинов MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-publication/">
+<span class="md-ellipsis">
+    
+  
+    Публикация MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api-add/">
+<span class="md-ellipsis">
+    
+  
+    Подключение OpenAPI
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Добавление диаграмм PlantUML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Добавление диаграмм PlantUML
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-diagram">
+<span class="md-ellipsis">
+      
+        Диаграмма последовательности
+      
+    </span>
+</a>
+<nav aria-label="Диаграмма последовательности" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plantuml_1">
+<span class="md-ellipsis">
+      
+        Синтаксис диаграммы последовательности в PlantUML
+      
+    </span>
+</a>
+<nav aria-label="Синтаксис диаграммы последовательности в PlantUML" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Типы участников
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Описание действий
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Альтернативные сценарии
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plugin">
+<span class="md-ellipsis">
+      
+        Генерация PlantUML в MkDocs Materials
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Полезные ссылки
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-css/">
+<span class="md-ellipsis">
+    
+  
+    Кастомизация стилей MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../snippets/">
+<span class="md-ellipsis">
+    
+  
+    Единый источник в MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Примеры доки: приложение Нотсапп
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Примеры доки: приложение Нотсапп
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/specification/">
+<span class="md-ellipsis">
+    
+  
+    Спецификация приложения
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/scenario-1/">
+<span class="md-ellipsis">
+    
+  
+    Сценарий «Создание новой заметки»
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/swagger/">
+<span class="md-ellipsis">
+    
+  
+    API Specification Swagger
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/redoc/">
+<span class="md-ellipsis">
+    
+  
+    API Specification Redoc
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-diagram">
+<span class="md-ellipsis">
+      
+        Диаграмма последовательности
+      
+    </span>
+</a>
+<nav aria-label="Диаграмма последовательности" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plantuml_1">
+<span class="md-ellipsis">
+      
+        Синтаксис диаграммы последовательности в PlantUML
+      
+    </span>
+</a>
+<nav aria-label="Синтаксис диаграммы последовательности в PlantUML" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Типы участников
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Описание действий
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Альтернативные сценарии
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plugin">
+<span class="md-ellipsis">
+      
+        Генерация PlantUML в MkDocs Materials
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Полезные ссылки
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="plantuml">Добавление диаграмм PlantUML</h1>
+<p>UML — это стандартизированный язык визуализации, проектирования и документирования программных систем, а также нотификация для создания абстрактных моделей этих систем.</p>
+<p>PlantUML — это инструмент, позволяющий создавать диаграммы и схемы с помощью текстового описания.</p>
+<p>PlantUML поддерживает создание разных типов диаграмм:</p>
+<ul>
+<li>диаграммы последовательности;</li>
+<li>диаграммы классов;</li>
+<li>диаграммы активностей;</li>
+<li>диаграммы прецедентов;</li>
+<li>диаграммы состояний.</li>
+</ul>
+<p>В рамках нашего курса мы рассмотрим разработку диаграммы последовательностей с помощью plantUML.</p>
+<h2 id="sequence-diagram">Диаграмма последовательности</h2>
+<p>Диаграмма последовательности (sequence diagram) показывает взаимодействие между объектами: как, кем и в каком порядке выполняются разные операции. С помощью диаграммы последовательности можно описать любой процесс в системе, например, пользовательский сценарий.</p>
+<h3 id="plantuml_1">Синтаксис диаграммы последовательности в PlantUML</h3>
+<div class="admonition info">
+<p class="admonition-title">Важно</p>
+<p>Код диаграммы в PlantUML заключается в теги:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>@startuml
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>@enduml
+</code></pre></div>
+</div>
+<h4 id="_1">Типы участников</h4>
+<p>Участники в диаграмме последовательности — это объекты системы, которые принимают участие в описываемом процессе:</p>
+<ul>
+<li>Пользователь — actor</li>
+<li>База данных — database</li>
+<li>Другой объект — participant</li>
+</ul>
+<p>Участники объявляются в начале диаграммы в формате <code>тип_участника Имя_участника</code>:</p>
+<div class="highlight"><span class="filename">Пример</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>@startuml
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>actor Пользователь
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>participant Приложение
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>participant Бэк
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>database "База данных"
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>@enduml
+</code></pre></div>
+<p>На диаграмме участники будут отображаться в порядке их представления.</p>
+<details class="quote">
+<summary>Как это выглядит</summary>
+<p></p><div class="puml-container"><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="182px" preserveAspectRatio="xMidYMid meet" style="width:393px;height:182px;background:#FFFFFF;" version="1.1" viewBox="0 0 393 182" width="393px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="participant-lifeline" data-entity-uid="part1" data-qualified-name="............" id="part1-lifeline"><g><title>............</title><rect fill="#000000" fill-opacity="0.00000" height="20" width="8" x="55.5498" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="59" x2="59" y1="81.2969" y2="101.2969"/></g></g><g class="participant-lifeline" data-entity-uid="part2" data-qualified-name=".........." id="part2-lifeline"><g><title>..........</title><rect fill="#000000" fill-opacity="0.00000" height="20" width="8" x="174.1582" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="178.0996" x2="178.0996" y1="81.2969" y2="101.2969"/></g></g><g class="participant-lifeline" data-entity-uid="part3" data-qualified-name="..." id="part3-lifeline"><g><title>...</title><rect fill="#000000" fill-opacity="0.00000" height="20" width="8" x="258.0889" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="261.2168" x2="261.2168" y1="81.2969" y2="101.2969"/></g></g><g class="participant-lifeline" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-lifeline"><g><title>.... ......</title><rect fill="#000000" fill-opacity="0.00000" height="20" width="8" x="338.2417" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="341.9609" x2="341.9609" y1="81.2969" y2="101.2969"/></g></g><g class="participant participant-head" data-entity-uid="part1" data-qualified-name="............" id="part1-head"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="5" y="77.9951">Пользователь</text><ellipse cx="59.5498" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59.5498,21.5 L59.5498,48.5 M46.5498,29.5 L72.5498,29.5 M59.5498,48.5 L46.5498,63.5 M59.5498,48.5 L72.5498,63.5" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-entity-uid="part1" data-qualified-name="............" id="part1-tail"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="5" y="113.292">Пользователь</text><ellipse cx="59.5498" cy="125.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59.5498,133.0938 L59.5498,160.0938 M46.5498,141.0938 L72.5498,141.0938 M59.5498,160.0938 L46.5498,175.0938 M59.5498,160.0938 L72.5498,175.0938" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-entity-uid="part2" data-qualified-name=".........." id="part2-head"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108.1172" x="124.0996" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.1172" x="131.0996" y="69.9951">Приложение</text></g><g class="participant participant-tail" data-entity-uid="part2" data-qualified-name=".........." id="part2-tail"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108.1172" x="124.0996" y="100.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.1172" x="131.0996" y="120.292">Приложение</text></g><g class="participant participant-head" data-entity-uid="part3" data-qualified-name="..." id="part3-head"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="39.7441" x="242.2168" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25.7441" x="249.2168" y="69.9951">Бэк</text></g><g class="participant participant-tail" data-entity-uid="part3" data-qualified-name="..." id="part3-tail"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="39.7441" x="242.2168" y="100.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25.7441" x="249.2168" y="120.292">Бэк</text></g><g class="participant participant-head" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-head"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5615" x="291.9609" y="77.9951">База данных</text><path d="M324.2417,29 C324.2417,19 342.2417,19 342.2417,19 C342.2417,19 360.2417,19 360.2417,29 L360.2417,55 C360.2417,65 342.2417,65 342.2417,65 C342.2417,65 324.2417,65 324.2417,55 L324.2417,29" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M324.2417,29 C324.2417,39 342.2417,39 342.2417,39 C342.2417,39 360.2417,39 360.2417,29" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-tail"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5615" x="291.9609" y="113.292">База данных</text><path d="M324.2417,126.5938 C324.2417,116.5938 342.2417,116.5938 342.2417,116.5938 C342.2417,116.5938 360.2417,116.5938 360.2417,126.5938 L360.2417,152.5938 C360.2417,162.5938 342.2417,162.5938 342.2417,162.5938 C342.2417,162.5938 324.2417,162.5938 324.2417,152.5938 L324.2417,126.5938" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M324.2417,126.5938 C324.2417,136.5938 342.2417,136.5938 342.2417,136.5938 C342.2417,136.5938 360.2417,136.5938 360.2417,126.5938" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><?plantuml-src IqmkoIzIk33_mhuBko_sNDWEf3TTs72nwS9M49zB0GWA4ejACfCp2nBpIe0ABpPSs75XDr3PDg2IlK3sLan54o_sNjW55av9B4bCIYnELL2wCF721g3n6nGkR04ozbxOUx7xOgiI0000?></g></svg></div></div><p></p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Если имя участника состоит из двух и более слов, его необходимо указать в кавычках.</p>
+</div>
+<h4 id="_2">Описание действий</h4>
+<p>После представления участников описываются взаимодействия между ними. Мы будем использовать только два типа действия:</p>
+<ul>
+<li>синхронный вызов (<code>-&gt;</code>);</li>
+<li>ответ на вызов (<code>&lt;--</code>).</li>
+</ul>
+<p>Взаимодействия двух участников описываются в формате:</p>
+<ul>
+<li>Вызов: <code>Участник-1 -&gt; Участник-2: Описание вызова</code></li>
+<li>Вызов: <code>Участник-1 &lt;-- Участник-2: Описание ответа</code></li>
+</ul>
+<div class="highlight"><span class="filename">Пример</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>@startuml
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>…
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>Пользователь -&gt; Приложение: вызов приложения
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>Пользователь &lt;-- Приложение: ответ на вызов
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>…
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>@enduml
+</code></pre></div>
+<details class="quote">
+<summary>Как это выглядит</summary>
+<p></p><div class="puml-container"><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="240px" preserveAspectRatio="xMidYMid meet" style="width:429px;height:240px;background:#FFFFFF;" version="1.1" viewBox="0 0 429 240" width="429px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="participant-lifeline" data-entity-uid="part1" data-qualified-name="............" id="part1-lifeline"><g><title>............</title><rect fill="#000000" fill-opacity="0.00000" height="78.2656" width="8" x="55.5498" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="59" x2="59" y1="81.2969" y2="159.5625"/></g></g><g class="participant-lifeline" data-entity-uid="part2" data-qualified-name=".........." id="part2-lifeline"><g><title>..........</title><rect fill="#000000" fill-opacity="0.00000" height="78.2656" width="8" x="210.0767" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="214.0181" x2="214.0181" y1="81.2969" y2="159.5625"/></g></g><g class="participant-lifeline" data-entity-uid="part3" data-qualified-name="..." id="part3-lifeline"><g><title>...</title><rect fill="#000000" fill-opacity="0.00000" height="78.2656" width="8" x="294.0073" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="297.1353" x2="297.1353" y1="81.2969" y2="159.5625"/></g></g><g class="participant-lifeline" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-lifeline"><g><title>.... ......</title><rect fill="#000000" fill-opacity="0.00000" height="78.2656" width="8" x="374.1602" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="377.8794" x2="377.8794" y1="81.2969" y2="159.5625"/></g></g><g class="participant participant-head" data-entity-uid="part1" data-qualified-name="............" id="part1-head"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="5" y="77.9951">Пользователь</text><ellipse cx="59.5498" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59.5498,21.5 L59.5498,48.5 M46.5498,29.5 L72.5498,29.5 M59.5498,48.5 L46.5498,63.5 M59.5498,48.5 L72.5498,63.5" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-entity-uid="part1" data-qualified-name="............" id="part1-tail"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="5" y="171.5576">Пользователь</text><ellipse cx="59.5498" cy="183.3594" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59.5498,191.3594 L59.5498,218.3594 M46.5498,199.3594 L72.5498,199.3594 M59.5498,218.3594 L46.5498,233.3594 M59.5498,218.3594 L72.5498,233.3594" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-entity-uid="part2" data-qualified-name=".........." id="part2-head"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108.1172" x="160.0181" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.1172" x="167.0181" y="69.9951">Приложение</text></g><g class="participant participant-tail" data-entity-uid="part2" data-qualified-name=".........." id="part2-tail"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108.1172" x="160.0181" y="158.5625"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.1172" x="167.0181" y="178.5576">Приложение</text></g><g class="participant participant-head" data-entity-uid="part3" data-qualified-name="..." id="part3-head"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="39.7441" x="278.1353" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25.7441" x="285.1353" y="69.9951">Бэк</text></g><g class="participant participant-tail" data-entity-uid="part3" data-qualified-name="..." id="part3-tail"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="39.7441" x="278.1353" y="158.5625"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25.7441" x="285.1353" y="178.5576">Бэк</text></g><g class="participant participant-head" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-head"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5615" x="327.8794" y="77.9951">База данных</text><path d="M360.1602,29 C360.1602,19 378.1602,19 378.1602,19 C378.1602,19 396.1602,19 396.1602,29 L396.1602,55 C396.1602,65 378.1602,65 378.1602,65 C378.1602,65 360.1602,65 360.1602,55 L360.1602,29" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M360.1602,29 C360.1602,39 378.1602,39 378.1602,39 C378.1602,39 396.1602,39 396.1602,29" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-tail"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5615" x="327.8794" y="171.5576">База данных</text><path d="M360.1602,184.8594 C360.1602,174.8594 378.1602,174.8594 378.1602,174.8594 C378.1602,174.8594 396.1602,174.8594 396.1602,184.8594 L396.1602,210.8594 C396.1602,220.8594 378.1602,220.8594 378.1602,220.8594 C378.1602,220.8594 360.1602,220.8594 360.1602,210.8594 L360.1602,184.8594" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M360.1602,184.8594 C360.1602,194.8594 378.1602,194.8594 378.1602,194.8594 C378.1602,194.8594 396.1602,194.8594 396.1602,184.8594" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="message" data-entity-1="part1" data-entity-2="part2" id="msg1"><polygon fill="#181818" points="202.0767,108.4297,212.0767,112.4297,202.0767,116.4297,206.0767,112.4297" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="59.5498" x2="208.0767" y1="112.4297" y2="112.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130.5269" x="66.5498" y="107.3638">вызов приложения</text></g><g class="message" data-entity-1="part2" data-entity-2="part1" id="msg2"><polygon fill="#181818" points="70.5498,137.5625,60.5498,141.5625,70.5498,145.5625,66.5498,141.5625" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;" x1="64.5498" x2="213.0767" y1="141.5625" y2="141.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103.9429" x="76.5498" y="136.4966">ответ на вызов</text></g><?plantuml-src VSr12i8m40NGVKynT9yBY7YNiRheHalD0QJWgehq15uX15F5adg5FpToh1jHQpQP6Hx_SsRN9U647ftiST7Vmqc5yDmJqbTmQVCiBtXb5SeMLtJAMYLHv_2D6ZdWDfmNR7dEcoMbQE0qtX7EEaH4gMMN9eCQgoSp-zau8NYfNvfm_mHo_9ywDMOijbVa4QGYFRctcWS0?></g></svg></div></div><p></p>
+</details>
+<h4 id="_3">Альтернативные сценарии</h4>
+<p>Диаграмма последовательности отображает не только успешный сценарий, но и его альтернативные варианты.</p>
+<p>Действия альтернативного варианта заключаются в отдельный блок, который создаётся с помощью директивы <code>alt</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>@startuml
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>…
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>alt Альтернативный сценарий
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>Пользователь -&gt; Приложение: отмена действия
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>Пользователь &lt;-- Приложение: отображение главного экрана
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>end alt
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>…
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>@enduml
+</code></pre></div>
+<details class="quote">
+<summary>Как это выглядит</summary>
+<p></p><div class="puml-container"><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="329px" preserveAspectRatio="xMidYMid meet" style="width:524px;height:329px;background:#FFFFFF;" version="1.1" viewBox="0 0 524 329" width="524px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:1.5;" width="362.9189" x="10" y="156.5625"/><g class="participant-lifeline" data-entity-uid="part1" data-qualified-name="............" id="part1-lifeline"><g><title>............</title><rect fill="#000000" fill-opacity="0.00000" height="167.6641" width="8" x="70.5498" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="74" x2="74" y1="81.2969" y2="248.9609"/></g></g><g class="participant-lifeline" data-entity-uid="part2" data-qualified-name=".........." id="part2-lifeline"><g><title>..........</title><rect fill="#000000" fill-opacity="0.00000" height="167.6641" width="8" x="304.8604" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="308.8018" x2="308.8018" y1="81.2969" y2="248.9609"/></g></g><g class="participant-lifeline" data-entity-uid="part3" data-qualified-name="..." id="part3-lifeline"><g><title>...</title><rect fill="#000000" fill-opacity="0.00000" height="167.6641" width="8" x="388.791" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="391.9189" x2="391.9189" y1="81.2969" y2="248.9609"/></g></g><g class="participant-lifeline" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-lifeline"><g><title>.... ......</title><rect fill="#000000" fill-opacity="0.00000" height="167.6641" width="8" x="468.9438" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="472.6631" x2="472.6631" y1="81.2969" y2="248.9609"/></g></g><g class="participant participant-head" data-entity-uid="part1" data-qualified-name="............" id="part1-head"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="20" y="77.9951">Пользователь</text><ellipse cx="74.5498" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M74.5498,21.5 L74.5498,48.5 M61.5498,29.5 L87.5498,29.5 M74.5498,48.5 L61.5498,63.5 M74.5498,48.5 L87.5498,63.5" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-entity-uid="part1" data-qualified-name="............" id="part1-tail"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="20" y="260.9561">Пользователь</text><ellipse cx="74.5498" cy="272.7578" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M74.5498,280.7578 L74.5498,307.7578 M61.5498,288.7578 L87.5498,288.7578 M74.5498,307.7578 L61.5498,322.7578 M74.5498,307.7578 L87.5498,322.7578" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-entity-uid="part2" data-qualified-name=".........." id="part2-head"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108.1172" x="254.8018" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.1172" x="261.8018" y="69.9951">Приложение</text></g><g class="participant participant-tail" data-entity-uid="part2" data-qualified-name=".........." id="part2-tail"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108.1172" x="254.8018" y="247.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.1172" x="261.8018" y="267.9561">Приложение</text></g><g class="participant participant-head" data-entity-uid="part3" data-qualified-name="..." id="part3-head"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="39.7441" x="372.9189" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25.7441" x="379.9189" y="69.9951">Бэк</text></g><g class="participant participant-tail" data-entity-uid="part3" data-qualified-name="..." id="part3-tail"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="39.7441" x="372.9189" y="247.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25.7441" x="379.9189" y="267.9561">Бэк</text></g><g class="participant participant-head" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-head"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5615" x="422.6631" y="77.9951">База данных</text><path d="M454.9438,29 C454.9438,19 472.9438,19 472.9438,19 C472.9438,19 490.9438,19 490.9438,29 L490.9438,55 C490.9438,65 472.9438,65 472.9438,65 C472.9438,65 454.9438,65 454.9438,55 L454.9438,29" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M454.9438,29 C454.9438,39 472.9438,39 472.9438,39 C472.9438,39 490.9438,39 490.9438,29" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-entity-uid="part4" data-qualified-name=".... ......" id="part4-tail"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5615" x="422.6631" y="260.9561">База данных</text><path d="M454.9438,274.2578 C454.9438,264.2578 472.9438,264.2578 472.9438,264.2578 C472.9438,264.2578 490.9438,264.2578 490.9438,274.2578 L490.9438,300.2578 C490.9438,310.2578 472.9438,310.2578 472.9438,310.2578 C472.9438,310.2578 454.9438,310.2578 454.9438,300.2578 L454.9438,274.2578" fill="#E2E2F0" style="stroke:#181818;stroke-width:0.5;"/><path d="M454.9438,274.2578 C454.9438,284.2578 472.9438,284.2578 472.9438,284.2578 C472.9438,284.2578 490.9438,284.2578 490.9438,274.2578" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="message" data-entity-1="part1" data-entity-2="part2" id="msg1"><polygon fill="#181818" points="296.8604,108.4297,306.8604,112.4297,296.8604,116.4297,300.8604,112.4297" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="74.5498" x2="302.8604" y1="112.4297" y2="112.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130.5269" x="81.5498" y="107.3638">вызов приложения</text></g><g class="message" data-entity-1="part2" data-entity-2="part1" id="msg2"><polygon fill="#181818" points="85.5498,137.5625,75.5498,141.5625,85.5498,145.5625,81.5498,141.5625" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;" x1="79.5498" x2="307.8604" y1="141.5625" y2="141.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103.9429" x="91.5498" y="136.4966">ответ на вызов</text></g><path d="M10,156.5625 L74.4429,156.5625 L74.4429,163.6953 L64.4429,173.6953 L10,173.6953 L10,156.5625" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:1.5;" width="362.9189" x="10" y="156.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19.4429" x="25" y="169.6294">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="180.8877" x="89.4429" y="168.7729">[Альтернативный сценарий]</text><g class="message" data-entity-1="part1" data-entity-2="part2" id="msg3"><polygon fill="#181818" points="296.8604,190.8281,306.8604,194.8281,296.8604,198.8281,300.8604,194.8281" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="74.5498" x2="302.8604" y1="194.8281" y2="194.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118.0156" x="81.5498" y="189.7622">отмена действия</text></g><g class="message" data-entity-1="part2" data-entity-2="part1" id="msg4"><polygon fill="#181818" points="85.5498,219.9609,75.5498,223.9609,85.5498,227.9609,81.5498,223.9609" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;" x1="79.5498" x2="307.8604" y1="223.9609" y2="223.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="210.3105" x="91.5498" y="218.895">отображение главного экрана</text></g><?plantuml-src fP7DRS9048NlL37YxWOYb5wMdmCI0WGk84622o2W0bfO30OSOgU5DntnPdq0yNSWlknwzlCtyzQk4VS6WZKAd7I60zS4NaT8xRqYVFfk4BSRxRxhnWJr2qUSYEs9vDodzz1Av_W9vQQBNTqDMrB52fvwBzXnaoFNgOwhbK0zQo_HvyEE7u94foKj-Bi5TF7QMekYPzg2K89KHyAIlsfJ3kewJBSqYSbeo8Fso6-O1vdejqw2pWTzzcuyc-Et5Dc5fSXejj7-6wx0XcV-KXTi2NfBmCCj2h6V5nWs3xrQtQObFmC0?></g></svg></div></div><p></p>
+</details>
+<p>Кроме альтернативных сценариев можно собирать и другие блоки:</p>
+<ul>
+<li><code>opt</code> — действия, которые выполняются только при определённом условии;</li>
+<li><code>loop</code> — повторяющиеся циклические вызовы;</li>
+<li><code>group</code> — действия, связанные по смыслу.</li>
+</ul>
+<h2 id="plugin">Генерация PlantUML в MkDocs Materials</h2>
+<p>Для автоматической генерации диаграмм при сборке проекта используйте плагин <code>mkdocs_puml</code>:</p>
+<ol>
+<li>
+<p>Установите плагин с помощью пакетного менеджера python:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>pip install mkdocs_puml
+</code></pre></div>
+</li>
+<li>
+<p>Подключите плагин в конфиге проекта:</p>
+<div class="highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">plantuml</span><span class="p">:</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">      </span><span class="nt">puml_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.plantuml.com/plantuml/</span>
+</code></pre></div>
+</li>
+<li>
+<p>Добавьте в md-файл код plantUML-диаграммы, в блоке кода диаграммы укажите ключевое слово <code>puml</code>:</p>
+<div class="admonition quote">
+<p class="admonition-title">Пример</p>
+<p>```puml</p>
+<p>@startuml</p>
+<p>@enduml</p>
+<p>```</p>
+</div>
+</li>
+</ol>
+<p><strong>Результат</strong>: при сборке проекта по тегу на страницу подтянется сгенерированная документация.</p>
+<h2 id="_4">Полезные ссылки</h2>
+<ul>
+<li><a href="https://plantuml.com/ru/" target="_blank">PlantUML</a>;</li>
+<li><a href="https://www.plantuml.com/plantuml/uml/" target="_blank">Песочница для plantUML-диаграмм</a>;</li>
+<li>Плагин <a href="https://pypi.org/project/mkdocs_puml/" target="_blank">mkdocs_puml</a>;</li>
+<li><a href="https://stepik.org/course/212663/promo" target="_blank">Курс по PlantUML на Stepik</a>.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2026 Novillero
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/novillero/dac-advanced" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script>document$.subscribe(() => {
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("redoc-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body></html>
