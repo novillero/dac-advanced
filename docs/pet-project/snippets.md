@@ -23,7 +23,7 @@
     markdown_extensions: # Расширения markdown
       - pymdownx.snippets:
         base_path:
-        - docs
+          - docs
     ```
 
 ### Переиспользование файла целиком
