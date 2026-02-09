@@ -46,7 +46,7 @@ theme: # Тема сайта, информация о ее параметрах
 plugins:
   - search
   - glightbox
-   
+
 nav: # Структура сайта
     - Главная страница: index.md
     - 'Markdown: базовый синтаксис': markdown.md
@@ -99,4 +99,4 @@ markdown_extensions: # Расширения markdown
       clickable_checkbox: true
 
 copyright: |
-  &copy; 2026 Novillero
+  &copy; 2026 MarinaSlukina
