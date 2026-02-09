@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Docs by parawriter" name="description"/>
+<link href="../" rel="prev"/>
+<link href="../mkdocs-plugins/" rel="next"/>
+<link href="../../images/logo.svg" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Настройка MkDocs - Docs as code advanced course</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="tech" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Перейти к содержанию
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="Docs as code advanced course" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Docs as code advanced course">
+<img alt="logo" src="../../images/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Docs as code advanced course
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Настройка MkDocs
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="tech" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+          
+  
+  
+    
+  
+  Материалы курса
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+    
+  
+  Домашний проект
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Docs as code advanced course" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Docs as code advanced course">
+<img alt="logo" src="../../images/logo.svg"/>
+</a>
+    Docs as code advanced course
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Материалы курса
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Материалы курса
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../markdown/">
+<span class="md-ellipsis">
+    
+  
+    Markdown: базовый синтаксис
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../markdown-extensions/">
+<span class="md-ellipsis">
+    
+  
+    Markdown: расширенный синтаксис
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../git-for-tech-writer/">
+<span class="md-ellipsis">
+    
+  
+    Тех.минимум по git
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../meetings/">
+<span class="md-ellipsis">
+    
+  
+    Вебинары
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Домашние задания
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Домашние задания
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-0/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание №0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-1/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-2/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-3/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-4/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание N4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-5/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание №5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../homeworks/homework-6/">
+<span class="md-ellipsis">
+    
+  
+    Домашнее задание №6
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Кросс-ревью
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Кросс-ревью
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../review/how-to/">
+<span class="md-ellipsis">
+    
+  
+    Как проводить ревью
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../review/styleguide/">
+<span class="md-ellipsis">
+    
+  
+    Стайлгайд для пошаговых инструкций
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Домашний проект
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Домашний проект
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Настройка MkDocs
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Настройка MkDocs
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs-material">
+<span class="md-ellipsis">
+      
+        Установка MkDocs и темы Material
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Создание проекта
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+</a>
+<nav aria-label="Структура проекта" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docs">
+<span class="md-ellipsis">
+      
+        Папка docs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocsyml">
+<span class="md-ellipsis">
+      
+        mkdocs.yml
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Локальная сборка проекта
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Создание удалённого репозитория проекта
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-plugins/">
+<span class="md-ellipsis">
+    
+  
+    Подключение плагинов MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-publication/">
+<span class="md-ellipsis">
+    
+  
+    Публикация MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api-add/">
+<span class="md-ellipsis">
+    
+  
+    Подключение OpenAPI
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../plant-uml/">
+<span class="md-ellipsis">
+    
+  
+    Добавление диаграмм PlantUML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mkdocs-css/">
+<span class="md-ellipsis">
+    
+  
+    Кастомизация стилей MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../snippets/">
+<span class="md-ellipsis">
+    
+  
+    Единый источник в MkDocs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Примеры доки: приложение Нотсапп
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Примеры доки: приложение Нотсапп
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/specification/">
+<span class="md-ellipsis">
+    
+  
+    Спецификация приложения
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/scenario-1/">
+<span class="md-ellipsis">
+    
+  
+    Сценарий «Создание новой заметки»
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/swagger/">
+<span class="md-ellipsis">
+    
+  
+    API Specification Swagger
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notesapp/redoc/">
+<span class="md-ellipsis">
+    
+  
+    API Specification Redoc
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs-material">
+<span class="md-ellipsis">
+      
+        Установка MkDocs и темы Material
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Создание проекта
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+</a>
+<nav aria-label="Структура проекта" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docs">
+<span class="md-ellipsis">
+      
+        Папка docs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocsyml">
+<span class="md-ellipsis">
+      
+        mkdocs.yml
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Локальная сборка проекта
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Создание удалённого репозитория проекта
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<a class="md-tag" href="../../tags/#tag:help">help</a>
+<a class="md-tag" href="../../tags/#tag:manual">manual</a>
+<a class="md-tag" href="../../tags/#tag:pet-project">pet-project</a>
+</nav>
+<h1 id="_1">Создание и базовая настройка проекта</h1>
+<p>Для разработки домашнего документационного проекта мы будем использовать наиболее популярную тему генератора статических сайтов MkDocs — <strong>Material for MkDocs</strong>.</p>
+<h2 id="mkdocs-material">Установка MkDocs и темы Material</h2>
+<p>Для установки используйте Python installs Packages (pip) — пакетный менеджер, который идёт в дистрибутиве python.</p>
+<ol>
+<li>
+<p>Установите генератор статических сайтов MkDocs. Откройте командную строку и выполните команду:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>pip install mkdocs
+</code></pre></div>
+</li>
+<li>
+<p>Для генератора MkDocs становите тему Material. В командной строке выполните:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>pip install mkdocs-material
+</code></pre></div>
+</li>
+</ol>
+<h2 id="_2">Создание проекта</h2>
+<ol>
+<li>Выберите папку на устройстве для создания локального репозитория проекта.</li>
+<li>
+<p>Создайте локальный репозиторий: откройте терминал в выбранной папке и выполните команду <code>git init</code>.</p>
+<p>В результате выполнения команды в папке создастся каталог <code>.git</code> — база данных локального репозитория.</p>
+</li>
+<li>
+<p>Создайте новый проект MkDocs: выполните команду <code>mkdocs new .</code></p>
+<p>В директории должны появиться базовые элементы проекта: конфиг <code>mkdocs.yml</code> и папка для исходных файлов <code>docs</code> с главной статьёй проекта <code>index.md</code>:</p>
+</li>
+</ol>
+<h2 id="_3">Структура проекта</h2>
+<p>Стандартная структура проекта:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>your-project
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>├─ .git
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>├─ docs
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>│ └─ index.md
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>└─ mkdocs.yml
+</code></pre></div>
+<h3 id="docs">Папка docs</h3>
+<p>В папке <code>docs</code> хранятся исходные файлы статей док.портала в формате markdown.</p>
+<p>По умолчанию в папке уже находится основная статья портала — <code>index.md</code>, которая при генерации сайта станет главной страницей сайта.</p>
+<ul>
+<li>
+<p>Вы можете добавлять новые статьи в корень папки <code>docs</code> — они будут публиковаться как статьи первого уровня вложенности:</p>
+<div class="grid" markdown="markdown">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docs
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>├─ index.md
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>├─ page-1.md
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>└─ page-2.md
+</code></pre></div>
+<div class="admonition quote">
+<ul>
+<li>url-проекта/</li>
+<li>url-проекта/page-1/</li>
+<li>url-проекта/page-2/</li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<p>Вы можете добавлять в папку <code>docs</code> вложенные папки для создания на портале подразделов со статьями второго уровня вложенности:</p>
+<div class="grid" markdown="markdown">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>docs
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>├─ index.md
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>└─ subfolder
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>    ├─ page-1.md
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>    └─ page-2.md
+</code></pre></div>
+<div class="admonition quote">
+<ul>
+<li>url-проекта/</li>
+<li>url-проекта/subfolder/page-1/</li>
+<li>url-проекта/subfolder/page-2/</li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<p>Вы можете добавлять в подпапки файл <code>index</code> для создания корневых (разводящих) статей подразделов:</p>
+<div class="grid" markdown="markdown">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>docs
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>├─ index.md
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>└─ subfolder
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    ├─ index.md
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>    ├─ page-1.md
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>    └─ page-2.md
+</code></pre></div>
+<div class="admonition quote">
+<ul>
+<li>url-проекта/</li>
+<li>url-проекта/subfolder/</li>
+<li>url-проекта/subfolder/page-1/</li>
+<li>url-проекта/subfolder/page-2/</li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<p>Вы можете вкладывать в подпапки новые папки для создания более развёрнутой структуры документации:</p>
+<div class="grid" markdown="markdown">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>docs
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>├─ index.md
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>└─ subfolder
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>    ├─ index.md
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>    ├─ page-1.md
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>    └─ subsubfolder
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>        ├─ index.md
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>        └─ page-2.md
+</code></pre></div>
+<div class="admonition quote">
+<ul>
+<li>url-проекта/</li>
+<li>url-проекта/subfolder/</li>
+<li>url-проекта/subfolder/page-1/</li>
+<li>url-проекта/subfolder/subsubfolder/</li>
+<li>url-проекта/subfolder/subsubfolder/page-2/</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+<p>Изображения, используемые в статьях проекта, следует размещать в отдельной папке <code>images</code>, вложенной в папку <code>docs</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>docs
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>├─ index.md
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>└─ images
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>    └─ picture.png
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>MkDocs не регламентирует папку для хранения изображений: технически достаточно, чтобы все изображения находились внутри основной папки <code>docs</code>. Использование общей папки <code>images</code> — один из возможных вариантов удобной организации изображений в проекте.</p>
+</div>
+<h3 id="mkdocsyml">mkdocs.yml</h3>
+<p>Файл <code>mkdocs.yml</code> — это конфиг, определяющий основные параметры проекта.</p>
+<p>Он создаётся в формате <code>yaml</code>, предназначенном для структурированной записи информации в виде пар <code>ключ: значение</code></p>
+<p>По умолчанию в конфиге прописан один параметр:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>site_name: My Docs
+</code></pre></div>
+<p>Для полноценной настройки проекта добавьте в конфиг другие параметры:</p>
+<ol>
+<li>
+<p>Основные параметры сайта и темы:</p>
+<div class="highlight"><span class="filename">mkdocs.yml начало</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Novillero portfolio</span><span class="w"> </span><span class="c1"># Название сайта</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nt">site_description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Профессиональное портфолио</span><span class="w"> </span><span class="c1"># Описание сайта, добавляется в meta-теги</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="c1"># Тема сайта, информация о ее параметрах</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w"> </span><span class="c1"># Название темы</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/logo.svg</span><span class="w"> </span><span class="c1"># Ссылка на логотип сайта, логотип добавляется в папку `docs/images`</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="nt">font</span><span class="p">:</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Roboto</span><span class="w"> </span><span class="c1"># Шрифт текста</span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Roboto Mono</span><span class="w"> </span><span class="c1"># Шрифт для текста кода</span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ru</span><span class="w"> </span><span class="c1"># Язык</span>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span><span class="w"> </span><span class="c1"># Настройки светлой и тёмной тем</span>
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span><span class="c1"># Настройки светлой темы</span>
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"> </span>
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/weather-sunny</span><span class="w"> </span><span class="c1"># Иконка для активации светлой темы</span>
+<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Выключить солнышко</span><span class="w"> </span><span class="c1"># Всплывающий текст-подсказка</span>
+<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span><span class="w"> </span><span class="c1"># Основной цвет</span>
+<a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">purple</span><span class="w"> </span><span class="c1"># Акцентный цвет</span>
+<a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">      </span><span class="c1"># вы можете использовать любой цвет из списка: </span>
+<a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">      </span><span class="c1"># red; pink; purple; deep purple; indigo; blue; light blue; cyan; teal; </span>
+<a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">      </span><span class="c1"># green; light green; lime; yellow; amber; orange; deep orange; brown; </span>
+<a href="#__codelineno-9-21" id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">      </span><span class="c1"># grey; blue grey; black; white</span>
+<a href="#__codelineno-9-22" id="__codelineno-9-22" name="__codelineno-9-22"></a>
+<a href="#__codelineno-9-23" id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">    </span><span class="c1"># Настройки тёмной темы</span>
+<a href="#__codelineno-9-24" id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slate</span>
+<a href="#__codelineno-9-25" id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+<a href="#__codelineno-9-26" id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/weather-night</span>
+<a href="#__codelineno-9-27" id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Позвать солнышко</span>
+<a href="#__codelineno-9-28" id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deep purple</span>
+<a href="#__codelineno-9-29" id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<a href="#__codelineno-9-30" id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"> </span><span class="c1"># настройки функциональностей темы</span>
+<a href="#__codelineno-9-31" id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.sections</span><span class="w"> </span><span class="c1"># Добавление разделов верхнего уровня в боковом меню, отключение спойлеров в боковом меню</span>
+<a href="#__codelineno-9-32" id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.path</span><span class="w"> </span><span class="c1"># Хлебные крошки</span>
+<a href="#__codelineno-9-33" id="__codelineno-9-33" name="__codelineno-9-33"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.indexes</span><span class="w"> </span><span class="c1"># Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav</span>
+<a href="#__codelineno-9-34" id="__codelineno-9-34" name="__codelineno-9-34"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span><span class="w"> </span><span class="c1"># Верхнее меню</span>
+<a href="#__codelineno-9-35" id="__codelineno-9-35" name="__codelineno-9-35"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs.sticky</span><span class="w"> </span><span class="c1"># Фиксация верхнего меню</span>
+<a href="#__codelineno-9-36" id="__codelineno-9-36" name="__codelineno-9-36"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.expand</span><span class="w"> </span><span class="c1"># Разворачивает спойлеры в левом меню по умолчанию</span>
+<a href="#__codelineno-9-37" id="__codelineno-9-37" name="__codelineno-9-37"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc.integrate</span><span class="w"> </span><span class="c1"># Фиксирует оглавление страницы в левом меню</span>
+<a href="#__codelineno-9-38" id="__codelineno-9-38" name="__codelineno-9-38"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant</span><span class="w"> </span><span class="c1"># Функция быстрой загрузки страниц</span>
+<a href="#__codelineno-9-39" id="__codelineno-9-39" name="__codelineno-9-39"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.top</span><span class="w"> </span><span class="c1"># Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы</span>
+<a href="#__codelineno-9-40" id="__codelineno-9-40" name="__codelineno-9-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.suggest</span><span class="w"> </span><span class="c1"># Подсказки при вводе поискового запроса</span>
+<a href="#__codelineno-9-41" id="__codelineno-9-41" name="__codelineno-9-41"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.highlight</span><span class="w"> </span><span class="c1"># Подсветка результатов поиска в тексте страницы</span>
+<a href="#__codelineno-9-42" id="__codelineno-9-42" name="__codelineno-9-42"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.copy</span><span class="w"> </span><span class="c1"># Кнопка копирования в блоке кода</span>
+</code></pre></div>
+</li>
+<li>
+<p>Навигация. В этом разделе конфига настраивается структура сайта. Здесь вы должны указать все статьи, которые будут добавлены в док.портал, с учётом их вложенности:</p>
+<div class="highlight"><span class="filename">mkdocs.yml продолжение</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">nav</span><span class="p">:</span><span class="w"> </span><span class="c1"># Структура сайта</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Главная страница</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Markdown:</span><span class="nv"> </span><span class="s">базовый</span><span class="nv"> </span><span class="s">синтаксис'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">markdown.md</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Тех.минимум по git</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git-for-tech-writer.md</span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Стайлгайд для пошаговых инструкций</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">styleguide.md</span>
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Домашний проект</span><span class="p">:</span>
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pet-project/index.md</span><span class="w"> </span><span class="c1"># корневая страница подраздела; работает при включенной функции navigation.indexes</span>
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Настройка MkDocs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pet-project/mkdocs-setup.md</span><span class="w"> </span><span class="c1"># вложенные страницы отбиваются отступами</span>
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Вебинары</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meetings.md</span>
+<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Домашние задания</span><span class="p">:</span>
+<a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Домашнее задание №0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homeworks/homework-0.md</span>
+<a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Домашнее задание N1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homeworks/homework-1.md</span>
+<a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Домашнее задание N2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homeworks/homework-2.md</span>
+</code></pre></div>
+</li>
+<li>
+<p>Расширения markdown (в примере приведены наиболее употребляемые расширения):</p>
+<div class="highlight"><span class="filename">mkdocs.yml продолжение</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"> </span><span class="c1"># Расширения markdown</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span><span class="w"> </span><span class="c1"># Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnotes</span><span class="w"> </span><span class="c1"># Поддержка встроенных сносок на страницах</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span><span class="w"> </span><span class="c1"># Использование html-атрибутов и CSS в элементах markdown</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_in_html</span><span class="w"> </span><span class="c1"># Поддержка markdown внутри html</span>
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">def_list</span><span class="w"> </span><span class="c1"># Поддержка списков определений</span>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span><span class="w"> </span><span class="c1"># Использование вкладок (табов)</span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">      </span><span class="nt">alternate_style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span><span class="w"> </span><span class="c1"># Использование спойлеров (катов)</span>
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span><span class="w"> </span><span class="c1"># Подсветка синтаксиса в блоках кода</span>
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">      </span><span class="nt">anchor_linenums</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span><span class="w"> </span><span class="c1"># Поддержка вложенных блоков кода</span>
+<a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.emoji</span><span class="p">:</span><span class="w"> </span><span class="c1"># Иконки и эмодзи</span>
+<a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">      </span><span class="nt">emoji_index</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.twemoji</span>
+<a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">      </span><span class="nt">emoji_generator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:material.extensions.emoji.to_svg</span>
+</code></pre></div>
+</li>
+<li>
+<p>Плагины. В разделе подключаются модульные плагины для добавления новых функциональностей:</p>
+<div class="highlight"><span class="filename">mkdocs.yml продолжение</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">plugins</span><span class="p">:</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"> </span><span class="c1"># Плагин для подключения поиска на портале</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Для работы плагина его нужно предварительно установить через Python installs Packages (pip).</p>
+</div>
+</li>
+</ol>
+<h2 id="_4">Локальная сборка проекта</h2>
+<p>Для предварительного просмотра сайта вы можете использовать так называемую локальную сборку и запустить сервер MkDocs.</p>
+<p>В терминале выполните команду <code>mkdocs serve</code>.</p>
+<p>Локальная версия сайта будет доступна на локальном порте <code>http://127.0.0.1:8000/</code>.</p>
+<p>При внесении изменений в проект локальная сборка тоже будет автоматически обновляться.</p>
+<h2 id="_5">Создание удалённого репозитория проекта</h2>
+<p>После первоначальной настройки проекта создайте удалённый репозиторий в GitHub и свяжите с ним локальный репозиторий проекта.</p>
+<ol>
+<li>Сохраните изменения в локальном репозитории (<code>git add .</code> → <code>git commit -m "создание проекта"</code>).</li>
+<li>
+<p>Перейдите в GitHub и создайте удалённый репозиторий: </p>
+<ol>
+<li>Нажмите на иконку профиля в правом верхнем углу, выберите пункт меню «Repositories» и нажмите кнопку <strong>New</strong>.</li>
+<li>
+<p>В поле «Repository name» введите название репозитория. Вы можете использовать латиницу, маленькие буквы, дефис, нижнее подчёркивание и цифры:</p>
+<p><code>my-awesome-doc-project</code></p>
+</li>
+<li>
+<p>Нажмите кнопку <strong>Create repository</strong>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Скопируйте ссылку на репозиторий из поля «Quick setup → HTTPS».</p>
+</li>
+<li>
+<p>Вернитесь в локальный репозиторий и проверьте его текущий статус (<code>git status</code>). В статусе ответа должно быть сообщение <code>On branch master
+nothing to commit, working tree clean</code>.</p>
+</li>
+<li>
+<p>Свяжите локальный репозиторий с созданным публичным репозиторием. Для этого выполните команду:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>git remote add origin url-репозитория
+</code></pre></div>
+</li>
+<li>
+<p>Опубликуйте локальную ветку <code>master</code> с помощью команды:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>git push -u origin master
+</code></pre></div>
+</li>
+<li>
+<p>Вернитесь в удалённый репозиторий и проверьте, что там появилась ветка <code>master</code> с вашим проектом из локального репозитория.</p>
+</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2026 Novillero
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/novillero/dac-advanced" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script>document$.subscribe(() => {
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("redoc-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body></html>
